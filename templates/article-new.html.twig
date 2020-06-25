@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Article</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Add a new Article</h1>
+    <div class="container">
+        <form method="post">
+        <div class="form-group row">
+            <label for="name" class="col-4 col-form-label">Name</label> 
+            <div class="col-8">
+            <input id="name" name="name" placeholder="name" type="text" class="form-control {% if errors.form is defined %}is-invalid{% endif %}" value="{{ formData.name }}">
+            {% if errors.form is defined %}
+            <div class="invalid-feedback">
+                {{ messages.form }}
+            </div>
+            {% endif %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="price" class="col-4 col-form-label">Price</label> 
+            <div class="col-8">
+            <input id="price" name="price" placeholder="price" type="text" class="form-control {% if errors.form is defined %}is-invalid{% endif %}" value="{{ formData.price }}">
+            {% if errors.form is defined %}
+            <div class="invalid-feedback">
+                {{ messages.form }}
+            </div>
+            {% endif %}
+            </div>
+        </div> 
+         <div class="form-group row">
+            <label for="description" class="col-4 col-form-label">Description</label> 
+            <div class="col-8">
+            <input id="description" name="description" placeholder="description" type="text" class="form-control {% if errors.form is defined %}is-invalid{% endif %}" value="{{ formData.description }}">
+            {% if errors.form is defined %}
+            <div class="invalid-feedback">
+                {{ messages.form }}
+            </div>
+            {% endif %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="quantity" class="col-4 col-form-label">Quantity</label> 
+            <div class="col-8">
+            <input id="quantity" name="quantity" placeholder="quantity" type="text" class="form-control {% if errors.form is defined %}is-invalid{% endif %}" value="{{ formData.quantity }}">
+            {% if errors.form is defined %}
+            <div class="invalid-feedback">
+                {{ messages.form }}
+            </div>
+            {% endif %}
+            </div>
+        </div> 
+        <div class="form-group row">
+            <div class="offset-4 col-8">
+            <button name="submit" type="submit" class="btn btn-primary">Valider</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>
